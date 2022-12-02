@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wapper{
+    width: 100%;
+    height: auto;
+}
+
+.content{
+    width: 554px;
+    height: 694px;
+    background-color: #FAFAFA;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 7px;
+}
+
+.content__header{
+    width: 100%;
+    height: 180px;
+    text-align: center;
+    border-bottom: 4px solid #41454D;
+}
+
+.content__header .img-logo{
+    width: 323px;
+    height: 84px;
+}
+
+.content__header-icon{
+    width: 100%;
+    height: 20px;
+    padding-top: 8px;
+    padding-right: 8px;
+
+}
+
+.content__header-icon__close{
+    text-align: right;
+    
+}
+
+.content__header-icon__close .icon-close{
+    font-size: 20px;
+}
+
+.content__header-title{
+    font-size: 21px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.content__form{
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+}
+
+.content__form .content__form-control{
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
+    position: relative; 
+}
+
+.content__form-control .label-text{
+    width: 26%;
+    font-weight: 600;
+    
+}
+
+.content__form-control .label-text .experience{
+    width: 24%;
+    position: absolute;
+    top: 0;
+}
+
+.content__form-control input , .content__form-control select{
+    width: 70%;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+
+}
+
+.content__form-control #upload_file{
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.content__form-control #border_email{
+    border: 1px solid #E4E4E4;
+}
+
+.content__form-control textarea{
+    width: 70%;
+    height: 148px;
+    padding-left: 10px;
+    outline: none;
+    border: 1px solid #E4E4E4;
+}
+
+.content__form-control .attach-file{
+    margin-left: 26%;
+    font-size: 14px;
+    cursor: pointer;
+}
+.content__form-button{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content__form-button button{
+    width: 320px;
+    height: 40px;
+    border: none;
+    background-color: #1DACCB;
+    color: white;
+    opacity: 68%;
+}
+
+.content__form  .content__form-attach__file{
+    margin-top: -5px;
+    margin-bottom: -10px;
+}
