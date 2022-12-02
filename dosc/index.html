@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <script src="./CSS/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./CSS/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="./CSS/fontawesome/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wapper">
+        <div class="content">
+            <div class="content__header">
+                <div class="content__header-icon"><p class="content__header-icon__close"><i class="fa-solid fa-xmark icon-close"></i></p></div>
+                <img class="img-logo" src="./img/logo.png" alt="">
+                <p class="content__header-title">Hãy gửi CV của bạn cho chúng tôi</p>
+            </div>
+            <div class="content__form">
+                <form action="javascript:void(0);" method="post">
+                    <div class="content__form-control">
+                        <label class="label-text" for="input_name">Tên của bạn</label>
+                        <input name="name" id="input_name" value="" type="text" placeholder="Ví dụ: Nguyễn Văn A" required>
+                    </div>
+                    <div class="content__form-control">
+                        <label class="label-text" for="input_phone">Số Điện Thoại</label>
+                        <input name="sdt" id="input_phone" value="" type="text" placeholder="Số điện thoại liên lạc" required>
+                    </div>
+                    <div class="content__form-control">
+                        <label class="label-text" for="select_position">Vị trí</label>
+                        <select name="position" id="select_position" required >
+                            <option value="Junior Ecommerce Web Developer">Junior Ecommerce Web Developer</option>
+                            <option value="Intern Ecommerce Web Developer">Intern Ecommerce Web Developer</option>
+                        </select>
+                    </div>
+                    <div class="content__form-control">
+                        <label class="label-text" for="textarea_experience"><p class="experience"> Kinh nghiệm làm việc </p></label>
+                        <textarea name="experience" id="textarea_experience"  required placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard d scrambled it to make a type specimen book."></textarea>
+                    </div>
+                    <div class="content__form-control content__form-attach__file">
+                        <label class="attach-file" for="upload_file"><i class="fa-solid fa-paperclip"></i> Đính kèm hình ảnh</label>
+                        <input name="picture" id="upload_file" type="file" placeholder="Đính kèm hình ảnh" required>
+                    </div>
+                    <div class="content__form-control">
+                        <label class="label-text" for="border_email">Email</label>
+                        <input name="email" id="border_email" type="email" placeholder="Ex: contact@freemind.vn" required>
+                    </div>
+                    <div class="content__form-button">
+                        <button type="submit" onclick="send_request()">Gửi CV cho Freemind</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> 
+</body>
+<script>
+    function send_request(){
+        var name = document.getElementById('input_name');
+        var phone = document.getElementById('input_phone');
+        var position = document.getElementById('select_position');
+        var experience = document.getElementById('textarea_experience');
+        var picture = document.getElementById('upload_file');
+        var email = document.getElementById('border_email');
+
+        if(name.value == ''){
+            alert('Bạn cần nhập Tên')
+        }
+
+        if(phone.value == ''){
+            alert('Bạn cần nhập SĐT')
+        }
+
+        if(position.value == ''){
+            alert('Bạn cần chọn vị trí')
+        }
+
+        if(experience.value == ''){
+            alert('Bạn cần nhập kinh nghiệm làm việc')
+        }
+
+        if(picture.value == ''){
+            alert('Bạn cần tải file lên')
+        }
+
+        if(email.value == ''){
+            alert('Bạn cần nhập email')
+        }
+
+        const options = {
+        method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({name: name, phone: phone, position:position, exp:experience, picture:picture, email:email})
+        };
+
+        fetch('https://freemind-test.netlify.app/.netlify/functions/test', options).then((res) => res.json()).then(data => console.log(data));
+
+        alert('Cảm ơn bạn đã gửi CV cho chúng tôi!')
+            }
+</script>
+<script src="./JS/jquery-3.2.1/jquery-3.2.1.slim.min.js"></script>
+<script src="./JS/popper/popper.min.js"></script>
+<script src="./CSS/fontawesome/js/fontawesome.min.js"></script>
+<script src="./CSS/fontawesome/js/all.min.js"></script>
+</html>
